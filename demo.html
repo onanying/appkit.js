@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>appkit test</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<input type="text" id="method" placeholder="method" />
+<input type="text" id="params" placeholder="json" />
+<button type="button" id="btn1">callApp</button>
+
+<hr>
+
+<button type="button" id="btn2">isWeixin</button>
+<button type="button" id="btn3">isApp</button>
+
+<script type="text/javascript" src="appkit.js"></script>
+<script type="text/javascript">
+
+	var method = document.getElementById("method");
+	var params = document.getElementById("params");
+	var btn1 = document.getElementById("btn1");
+
+	var btn2 = document.getElementById("btn2");
+	var btn3 = document.getElementById("btn3");
+
+	var appkit = new Appkit();
+
+	btn1.onclick = function(){
+		appkit.callApp(method.value, params.value);
+		//appkit.callApp(method.value);
+	};
+
+	btn2.onclick = function(){
+		if(appkit.isWeixin()){
+			alert("true");
+		}else{
+			alert("false");
+		}
+	};
+
+	btn3.onclick = function(){
+		if(appkit.isApp()){
+			alert("true");
+		}else{
+			alert("false");
+		}
+	};
+
+</script>
+
+</body>
+</html>
