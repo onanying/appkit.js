@@ -10,7 +10,7 @@ JS调用Android/iOS方法的封装，支持iOS的WKWebView，可判断网页是�
 
 - iOS使用WKWebView后无法自定义JS对象名，默认为webkit，所以不用动
 - 修改Android的JS对象名为adwebkit
-- 改Android/iOS的方法名需统一
+- Android/iOS定义的方法名需统一
 
 #### 建立对象
 
