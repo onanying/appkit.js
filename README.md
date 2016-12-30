@@ -6,7 +6,7 @@ JS调用Android/iOS方法的封装，支持iOS的WKWebView，可判断网页是�
 
 > demo.html 里有范例代码
 
-#### 修改Android/iOS的JS对象名
+#### Android/iOS的定义规则
 
 - iOS使用WKWebView后无法自定义JS对象名，默认为webkit，所以不用动
 - 修改Android的JS对象名为adwebkit
