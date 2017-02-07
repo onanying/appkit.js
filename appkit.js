@@ -11,7 +11,16 @@
         return false;
     };
 
-    // 是否在PC的微信浏览器中
+    // 是否在微信APP版的浏览器中
+    obj.isWeixinApp = function() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/micromessenger/i) == "micromessenger" &&  ua.match(/webview/i) == "webview") {
+            return true;
+        }
+        return false;
+    };
+
+    // 是否在微信PC版的浏览器中
     obj.isWeixinPC = function() {
         var ua = navigator.userAgent.toLowerCase();
         if (ua.match(/micromessenger/i) == "micromessenger" &&  ua.match(/qqbrowser/i) == "qqbrowser") {
