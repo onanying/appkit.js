@@ -1,4 +1,3 @@
-
 ;var Appkit = function() {
 
     var obj = new Object();
