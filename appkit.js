@@ -1,3 +1,4 @@
+
 ;var Appkit = function() {
 
     var obj = new Object();
@@ -14,7 +15,7 @@
     // 是否在微信APP版的浏览器中
     obj.isWeixinApp = function() {
         var ua = navigator.userAgent.toLowerCase();
-        if (ua.match(/micromessenger/i) == "micromessenger" &&  ua.match(/webview/i) == "webview") {
+        if (ua.match(/micromessenger/i) == "micromessenger" &&  ua.match(/mobile/i) == "mobile") {
             return true;
         }
         return false;
@@ -23,7 +24,7 @@
     // 是否在微信PC版的浏览器中
     obj.isWeixinPC = function() {
         var ua = navigator.userAgent.toLowerCase();
-        if (ua.match(/micromessenger/i) == "micromessenger" &&  ua.match(/qqbrowser/i) == "qqbrowser") {
+        if (ua.match(/micromessenger/i) == "micromessenger" &&  ua.match(/windowswechat/i) == "windowswechat") {
             return true;
         }
         return false;
@@ -32,7 +33,7 @@
     // 是否在自家APP的Android浏览器中
     obj.isAD = function() {
         var ua = navigator.userAgent.toLowerCase();
-        if (ua.match(/www51efancom/i) == "www51efancom" &&  ua.match(/webview/i) == "android") {
+        if (ua.match(/www51efancom/i) == "www51efancom" &&  ua.match(/android/i) == "android") {
             return true;
         }
         return false;
@@ -41,7 +42,7 @@
     // 是否在自家APP的iOS浏览器中
     obj.isIOS = function() {
         var ua = navigator.userAgent.toLowerCase();
-        if (ua.match(/www51efancom/i) == "www51efancom" &&  ua.match(/webview/i) == "ios") {
+        if (ua.match(/www51efancom/i) == "www51efancom" &&  ua.match(/ios/i) == "ios") {
             return true;
         }
         return false;
