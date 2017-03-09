@@ -14,20 +14,18 @@ JS调用Android/iOS方法的封装，支持iOS的WKWebView，可判断网页是�
 
 #### 建立对象
 
-```javascript
-var appkit = new Appkit();
-```
+引用后脚本后，默认会建立一个 appkit 对象，可直接使用
 
 #### JS调用Android/iOS的方法
 
-调用带参数的方法
+调用自家APP中带参数的方法
 
 ```javascript
 // 第一个参数为Android/iOS定义的方法名，第二个参数为json字符串参数
 appkit.callApp("HtmlGetLocation", '{"lat": 116.436464,"lng":40.024643}');
 ```
 
-调用不带参数的方法
+调用自家APP中不带参数的方法
 
 ```javascript
 appkit.callApp("HtmlGetLocation");
@@ -43,7 +41,27 @@ if(appkit.isWeixin()){
 }
 ```
 
-#### 判断网页是否在APP浏览器中
+#### 判断网页是否在微信APP版的浏览器中
+
+```javascript
+if(appkit.isWeixinApp()){
+	alert("true");
+}else{
+	alert("false");
+}
+```
+
+#### 判断网页是否在微信PC版的浏览器中
+
+```javascript
+if(appkit.isWeixinPC()){
+	alert("true");
+}else{
+	alert("false");
+}
+```
+
+#### 判断网页是否在自家APP浏览器中
 
 ```javascript
 if(appkit.isApp()){
