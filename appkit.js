@@ -29,23 +29,25 @@
         return false;
     };
 
-    // 是否在Android浏览器中
+    // 是否在自家APP的Android浏览器中
     obj.isAD = function() {
-        if (typeof(window.adwebkit) != "undefined") {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/www51efancom/i) == "www51efancom" &&  ua.match(/webview/i) == "android") {
             return true;
         }
         return false;
     };
 
-    // 是否在iOS浏览器中
+    // 是否在自家APP的iOS浏览器中
     obj.isIOS = function() {
-        if (typeof(window.webkit) != "undefined") {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/www51efancom/i) == "www51efancom" &&  ua.match(/webview/i) == "ios") {
             return true;
         }
         return false;
     };
 
-    // 是否在App浏览器中
+    // 是否在自家APP的浏览器中
     obj.isApp = function() {
         if (obj.isAD() || obj.isIOS()) {
             return true;
@@ -64,12 +66,12 @@
         }
     };
 
-    // JS调用Android方法
+    // JS调用自家APP的Android方法
     obj.callAD = function(method, json) {
         eval("window.adwebkit." + method + "(" + (json == null ? "" : "'" + json + "'") + ");");
     };
 
-    // JS调用iOS方法
+    // JS调用自家APP的iOS方法
     obj.callIOS = function(method, json) {
         eval("window.webkit.messageHandlers." + method + ".postMessage(" + (json == null ? "null" : json) + ");");
     };
